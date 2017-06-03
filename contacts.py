@@ -1,3 +1,14 @@
+import secret
+
+
+contacts = set()
+
+
+def set_from_file(path):
+    with open(path, 'r') as file:
+        return {line.strip() for line in file}
+
+
 # get contacts from Contacts
 
 with open ('contacts.vcf', 'r') as contacts_file:
@@ -7,7 +18,9 @@ with open ('contacts.vcf', 'r') as contacts_file:
         if line[0:3] != 'FN:':
             continue
 
-        print line[3:].strip()
+        contact = line[3:].strip()
+
+        contacts.add(contact)
 
 
 # get contacts from Facebook
@@ -19,4 +32,20 @@ with open ('facebook_friends.txt', 'r') as facebook_friends_file:
         if 'FriendFriends' not in line:
             continue
 
-        print facebook_friends_file.next().strip()
+        friend = facebook_friends_file.next().strip()
+
+        contacts.add(friend)
+
+
+# remove contacts
+
+remove = set_from_file('remove.txt')
+
+contacts -= remove
+
+
+current = set_from_file('current.txt')
+
+for contact in sorted(contacts):
+    if contact not in current:
+        print contact
