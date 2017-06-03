@@ -1,1 +1,5 @@
 *.vcf
+*.txt
+*.pyc
+venv
+secret.py
