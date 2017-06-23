@@ -51,7 +51,7 @@ with open ('combine_and_convert.txt', 'r') as combine_and_convert_file:
         names[-1] = names[-1].strip()
         name_to_keep = names[0]
         names = set(names)
-        contacts -= set(names)
+        contacts -= names
         contacts.add(name_to_keep)
 
 # print new contacts
