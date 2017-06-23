@@ -4,7 +4,7 @@ import secret
 contacts = set()
 
 
-def set_from_file(path):
+def get_set_from_file(path):
     with open(path, 'r') as file:
         return {line.strip() for line in file}
 
@@ -39,12 +39,24 @@ with open ('facebook_friends.txt', 'r') as facebook_friends_file:
 
 # remove contacts
 
-remove = set_from_file('remove.txt')
-
-contacts -= remove
+contacts -= get_set_from_file('remove.txt')
 
 
-current = set_from_file('current.txt')
+# combine and convert
+
+with open ('combine_and_convert.txt', 'r') as combine_and_convert_file:
+
+    for line in combine_and_convert_file:
+        names = line.split(', ')
+        names[-1] = names[-1].strip()
+        name_to_keep = names[0]
+        names = set(names)
+        contacts -= set(names)
+        contacts.add(name_to_keep)
+
+# print new contacts
+
+current = get_set_from_file('current.txt')
 
 for contact in sorted(contacts):
     if contact not in current:
