@@ -14,7 +14,7 @@ contacts.update(get_contacts_set_from_file('facebook_friends.txt'))
 contacts.difference_update(get_contacts_set_from_file('remove.txt'))
 
 # combine and convert
-with open ('combine_and_convert.txt', 'r') as combine_and_convert_file:
+with open('combine_and_convert.txt', 'r') as combine_and_convert_file:
 
     for line in combine_and_convert_file:
         names = line.split(', ')
