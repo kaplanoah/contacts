@@ -21,14 +21,18 @@ class TestUtils(unittest.TestCase):
         previous_line = 'Friends\n'
         self.assertTrue(utils.is_contact(previous_line, 'facebook'))
 
+        not_contact_previous_line = 'BEGIN:VCARD'
+        self.assertFalse(utils.is_contact(not_contact_previous_line, 'apple'))
+        self.assertFalse(utils.is_contact(not_contact_previous_line, 'facebook'))
+
     def test_process_contact(self):
+        expected = 'Tara Casteel'
+
         line = 'FN:Tara Casteel'
-        expected_processed = 'Tara Casteel'
-        self.assertEqual(utils.process_contact(line, 'apple'), expected_processed)
+        self.assertEqual(utils.process_contact(line, 'apple'), expected)
 
         line = 'Tara Casteel\n'
-        expected_processed = 'Tara Casteel'
-        self.assertEqual(utils.process_contact(line, 'facebook'), expected_processed)
+        self.assertEqual(utils.process_contact(line, 'facebook'), expected)
 
 
 if __name__ == '__main__':
