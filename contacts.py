@@ -1,4 +1,5 @@
-import secret
+"""Combines and cleans contact names from Apple and Facebook."""
+
 from utils import get_contacts_set_from_file
 
 
