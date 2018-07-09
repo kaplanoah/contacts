@@ -12,7 +12,12 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(utils.get_contacts_source(path), 'facebook')
 
         path = 'current.txt'
-        self.assertEqual(utils.get_contacts_source(path), 'txt/csv')
+        self.assertNotEqual(utils.get_contacts_source(path), 'apple')
+        self.assertNotEqual(utils.get_contacts_source(path), 'facebook')
+
+        path = 'combine_and_convert.csv'
+        self.assertNotEqual(utils.get_contacts_source(path), 'apple')
+        self.assertNotEqual(utils.get_contacts_source(path), 'facebook')
 
     def test_is_contact(self):
         previous_line = 'N:Tara;Casteel;;;'

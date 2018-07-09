@@ -1,10 +1,11 @@
 # Contacts processor
 
-Take contact names from Apple contacts and Facebook friends, and combines and cleans them up.
+Takes names from Apple contacts and Facebook friends, and combines them and cleans them up.
 
 <img width="500px" src="https://i.imgur.com/eSLUHLK.png">
 <img width="500px" src="https://i.imgur.com/HqCKs86.png">
-<img width="500px" src="https://i.imgur.com/xHdkPCa.png">
+<img width="500px" src="https://i.imgur.com/gUjEeZS.png">
+
 
 ## Installing
 
@@ -78,7 +79,7 @@ Jamie Hansen
 To combine several names into one name, add a `combine_and_convert.csv` file to `contacts_files` and put comma separated names that you want combined. The output will always use only the first name on each line:
 
 ```
-Russ Newton, Russell Newton
+Russ Newton,Russell Newton
 ```
 
 
