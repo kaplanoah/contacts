@@ -2,15 +2,17 @@
 
 Take contact names from Apple contacts and Facebook friends, and combines and cleans them up.
 
+
 ## Installing
 
-1. Clone or download the repository
+1. Clone or download the repository.
 
 2. Running the script requires Python. (Works with Python 2 and 3. Check for Python in terminal with: `python -V`)
 
+
 ## Using
 
-#### Add Apple contacts
+### Add Apple contacts
 
 1. Open the Contacts app for mac.
 
@@ -20,13 +22,22 @@ Take contact names from Apple contacts and Facebook friends, and combines and cl
 
 1. Move the export to the `contacts_files` directory:
 
+
     $ mv <path_to_export> <path_to_repo>/contacts_files/
 
-#### Add Facebook friends
+The file should contain something like this:
 
-1. Go to the Facebook page with all your friends.
+```
+N:Russ;Newton;;;
+FN:Russ Newton
+TEL;type=CELL;type=VOICE;type=pref:
+```
 
-1. Scroll to the bottom of the page so all your friends load.
+### Add Facebook friends
+
+1. Go to the Facebook page that has all your friends.
+
+1. Scroll to the bottom of the page so all your friends load and display.
 
 1. Copy the contents of the entire page (`⌘A`)
 
@@ -34,9 +45,19 @@ Take contact names from Apple contacts and Facebook friends, and combines and cl
 
 1. Paste the Facebook page contents into the `facebook_friends.txt' file.
 
-#### Run the script
+The file should contain something like this:
 
-    python contacts.py
+```
+Close Friend
+Friends
+Russell Newton
+16 mutual friends
+```
+
+### Run the script
+
+    $ python contacts.py
+
 
 ## Testing
 
