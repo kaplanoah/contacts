@@ -22,8 +22,9 @@ Take contact names from Apple contacts and Facebook friends, and combines and cl
 
 1. Move the export to the `contacts_files` directory:
 
-
-    $ mv <path_to_export> <path_to_repo>/contacts_files/
+```
+$ mv <path_to_export> <path_to_repo>/contacts_files/
+```
 
 The file should contain something like this:
 
@@ -43,7 +44,7 @@ TEL;type=CELL;type=VOICE;type=pref:
 
 1. Make a `facebook_friends.txt` file in the `contacts_files` directory.
 
-1. Paste the Facebook page contents into the `facebook_friends.txt' file.
+1. Paste the Facebook page contents into the `facebook_friends.txt` file.
 
 The file should contain something like this:
 
@@ -57,6 +58,25 @@ Russell Newton
 ### Run the script
 
     $ python contacts.py
+
+The output will be the names from all the contacts and friends.
+
+### Remove names
+
+To remove a name from the output, add a `remove.txt` file to `contacts_files` and put one name on each line.
+
+```
+Lorene Stone
+Jamie Hansen
+```
+
+### Combining names
+
+To combine several names into one name, add a `combine_and_convert.csv` file to `contacts_files` and put comma separated names that you want combined. The output will always use only the first name on each line.
+
+```
+Russell Newton,Russ Newton
+```
 
 
 ## Testing
