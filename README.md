@@ -2,9 +2,9 @@
 
 Take contact names from Apple contacts and Facebook friends, and combines and cleans them up.
 
-<img src="https://i.imgur.com/eSLUHLK.png">
-<img src="https://i.imgur.com/HqCKs86.png">
-<img src="https://i.imgur.com/xHdkPCa.png">
+<img width="500px" src="https://i.imgur.com/eSLUHLK.png">
+<img width="500px" src="https://i.imgur.com/HqCKs86.png">
+<img width="500px" src="https://i.imgur.com/xHdkPCa.png">
 
 ## Installing
 
@@ -66,7 +66,7 @@ The output will be the names from all the contacts and friends.
 
 ### Remove names
 
-To remove a name from the output, add a `remove.txt` file to `contacts_files` and put one name on each line.
+To remove a name from the output, add a `remove.txt` file to `contacts_files` and put one name on each line:
 
 ```
 Lorene Stone
@@ -75,7 +75,7 @@ Jamie Hansen
 
 ### Combine names
 
-To combine several names into one name, add a `combine_and_convert.csv` file to `contacts_files` and put comma separated names that you want combined. The output will always use only the first name on each line.
+To combine several names into one name, add a `combine_and_convert.csv` file to `contacts_files` and put comma separated names that you want combined. The output will always use only the first name on each line:
 
 ```
 Russ Newton, Russell Newton
