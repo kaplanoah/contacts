@@ -2,6 +2,9 @@
 
 Take contact names from Apple contacts and Facebook friends, and combines and cleans them up.
 
+<img src="https://i.imgur.com/eSLUHLK.png">
+<img src="https://i.imgur.com/HqCKs86.png">
+<img src="https://i.imgur.com/xHdkPCa.png">
 
 ## Installing
 
@@ -70,12 +73,12 @@ Lorene Stone
 Jamie Hansen
 ```
 
-### Combining names
+### Combine names
 
 To combine several names into one name, add a `combine_and_convert.csv` file to `contacts_files` and put comma separated names that you want combined. The output will always use only the first name on each line.
 
 ```
-Russell Newton,Russ Newton
+Russ Newton, Russell Newton
 ```
 
 
