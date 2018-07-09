@@ -1,6 +1,6 @@
 """Combines and cleans contact names from Apple and Facebook."""
 
-from utils import get_contacts_set_from_file
+from utils import get_contacts_set_from_file, get_path
 
 
 contacts = set()
@@ -15,7 +15,7 @@ contacts.update(get_contacts_set_from_file('facebook_friends.txt'))
 contacts.difference_update(get_contacts_set_from_file('remove.txt'))
 
 # combine and convert
-with open('combine_and_convert.txt', 'r') as combine_and_convert_file:
+with open(get_path('combine_and_convert.csv'), 'r') as combine_and_convert_file:
 
     for line in combine_and_convert_file:
         names = line.strip().split(',')

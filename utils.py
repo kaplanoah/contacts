@@ -2,16 +2,22 @@
 
 import os
 
+CONTACTS_FILES_PATH = 'contacts_files/'
 
-def get_contacts_source(path):
-    filename, extension = os.path.splitext(path)
+
+def get_path(file_name):
+    return'{}{}'.format(CONTACTS_FILES_PATH, file_name)
+
+
+def get_contacts_source(file_name):
+    filename, extension = os.path.splitext(file_name)
 
     if extension == '.vcf':
         return 'apple'
     elif 'facebook' in filename:
         return 'facebook'
     else:
-        return 'txt'
+        return 'txt/csv'
 
 
 def is_contact(previous_line, source):
@@ -29,12 +35,12 @@ def process_contact(line, source):
     return line.strip()
 
 
-def get_contacts_set_from_file(path):
-    source = get_contacts_source(path)
+def get_contacts_set_from_file(file_name):
+    source = get_contacts_source(file_name)
 
     contacts = set()
 
-    with open(path, 'r') as contacts_file:
+    with open(get_path(file_name), 'r') as contacts_file:
 
         previous_line = ''
 
