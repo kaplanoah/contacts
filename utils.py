@@ -6,7 +6,11 @@ CONTACTS_FILES_PATH = 'contacts_files/'
 
 
 def get_path(file_name):
-    return'{}{}'.format(CONTACTS_FILES_PATH, file_name)
+    return '{}{}'.format(CONTACTS_FILES_PATH, file_name)
+
+
+def does_file_exist(file_name):
+    return os.path.exists(get_path(file_name))
 
 
 def get_contacts_source(file_name):
@@ -36,6 +40,9 @@ def process_contact(line, source):
 
 
 def get_contacts_set_from_file(file_name):
+    if not does_file_exist(file_name):
+        return set()
+
     source = get_contacts_source(file_name)
 
     contacts = set()
@@ -53,3 +60,15 @@ def get_contacts_set_from_file(file_name):
             previous_line = line
 
     return contacts
+
+
+def combine_and_convert(contacts):
+    if not does_file_exist('combine_and_convert.csv'):
+        return
+
+    with open(get_path('combine_and_convert.csv'), 'r') as combine_and_convert_file:
+        for line in combine_and_convert_file:
+            names = line.strip().split(',')
+            name_to_keep = names[0]
+            contacts.difference_update(set(names))
+            contacts.add(name_to_keep)
