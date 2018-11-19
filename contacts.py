@@ -11,11 +11,11 @@ contacts.update(get_contacts_set_from_file('contacts.vcf'))
 # Facebook
 contacts.update(get_contacts_set_from_file('facebook_friends.txt'))
 
-# remove
-contacts.difference_update(get_contacts_set_from_file('remove.txt'))
-
 # combine and convert
 combine_and_convert(contacts)
+
+# remove
+contacts.difference_update(get_contacts_set_from_file('remove.txt'))
 
 # print new contacts
 current = get_contacts_set_from_file('current.txt')

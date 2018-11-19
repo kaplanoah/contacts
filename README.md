@@ -24,10 +24,10 @@ Takes names from Apple contacts and Facebook friends, and combines them and clea
 
 1. Export the contacts as vCards (File > Export > Export vCard)
 
-1. Move the export to the `contacts_files` directory:
+1. Move the export to `contacts_files/contacts.vcf`:
 
 ```
-$ mv <path_to_export> <path_to_repo>/contacts_files/
+$ mv <path_to_export> <path_to_repo>/contacts_files/contacts.vcf
 ```
 
 The file should contain something like this:
